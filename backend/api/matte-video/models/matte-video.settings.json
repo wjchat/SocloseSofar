@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "matte_videos",
+  "info": {
+    "name": "MatteVideos"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "date": {
+      "type": "string"
+    },
+    "video": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}

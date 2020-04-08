@@ -1,0 +1,18 @@
+.uploadContainer {
+  width: 40%;
+  text-align: center;
+}
+.Progress,
+.Progress_Seek {
+  height: 3px;
+}
+
+.Progress {
+  width: 50%;
+  background-color: grey;
+  margin: auto;
+  margin-top: 10px;
+}
+.Progress_Seek {
+  background-color: green;
+}

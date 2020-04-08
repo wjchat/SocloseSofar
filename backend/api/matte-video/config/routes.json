@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/matte-videos",
+      "handler": "matte-video.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/matte-videos/count",
+      "handler": "matte-video.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/matte-videos/:id",
+      "handler": "matte-video.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/matte-videos",
+      "handler": "matte-video.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/matte-videos/:id",
+      "handler": "matte-video.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/matte-videos/:id",
+      "handler": "matte-video.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
