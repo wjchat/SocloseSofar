@@ -1,0 +1,29 @@
+.leftContainer {
+  position: absolute;
+  display: flexbox;
+  height: 65%;
+  width: 14%;
+  top: 17.5%;
+  left: 4.75%;
+  /* background-color: yellow; */
+  overflow-wrap: break-word;
+  line-height: 9vw;
+}
+
+.titleBright {
+  position: absolute;
+  top: -15%;
+  font-family: balboa, sans-serif;
+  font-weight: bolder;
+  font-size: 4.5vw;
+  color: #C1B267;
+}
+
+.titleDark {
+  position: relative;
+  top: -2.5%;
+  font-family: balboa, sans-serif;
+  font-weight: bolder;
+  font-size: 4.5vw;
+  color: #202121
+}

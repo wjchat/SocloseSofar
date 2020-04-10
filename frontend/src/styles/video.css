@@ -1,0 +1,9 @@
+.vidContainer {
+  position: absolute;
+  height: 65%;
+  width: 53%;
+  left: 23.5%;
+  top: 17.5%;
+  background-color: black;
+}
+

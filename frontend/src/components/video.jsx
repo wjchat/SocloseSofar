@@ -1,4 +1,6 @@
 import React from "react"
+import ReactPlayer from 'react-player'
+import '../styles/video.css'
 
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -21,10 +23,13 @@ export default ({ children }) => {
   )
   const videoSRC = data.allStrapiMatteVideos.edges[0].node.video.publicURL
   return (
-      <video width="320" height="240" controls>
-        <source src={videoSRC} type="video/mp4" />
-        <source src={videoSRC} type="video/ogg" />
-        Your browser does not support the video tag.
-      </video>
-  )
+    <div className="vidContainer">
+      <ReactPlayer 
+        width="100%" 
+        height="100%" 
+        url={videoSRC}
+        controls={true}
+      />
+    </div>
+)
 }

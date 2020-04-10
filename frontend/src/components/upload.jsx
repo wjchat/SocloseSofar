@@ -1,7 +1,7 @@
 import React from "react"
 import axios from "axios"
 
-import "./upload.css"
+import "../styles/upload.css"
 
 /**
   Return percent of value / total
