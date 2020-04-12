@@ -1,11 +1,27 @@
 import React from "react"
-import '../styles/left.css'
+import "../styles/left.scss"
 
 export default ({ children }) => {
   return (
     <div className="leftContainer">
-      <h1 className="titleBright">So Close<br/>So Far</h1>
-      <h1 className="titleDark">So Far<br/>So Close</h1>
+      <h1 className="titleBright">
+        So
+        <br />
+        Close
+        <br />
+        So
+        <br />
+        Far
+      </h1>
+      <h1 className="titleDark">
+        So
+        <br />
+        Close
+        <br />
+        So
+        <br />
+        Far
+      </h1>
     </div>
-)
+  )
 }

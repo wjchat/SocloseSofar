@@ -1,0 +1,20 @@
+@import './global';
+
+.leftContainer {
+  font-family: balboa, sans-serif;
+  font-weight: bolder;
+  font-size: $largeText ;
+  line-height: 175%;
+    padding-left: 10%;
+}
+.titleBright {
+  position: relative;
+  color: #c1b267;
+    margin-top: -.5 * $largeText;
+}
+
+.titleDark {
+  position: absolute;
+  top: $largeText * .875;
+  color: #202121;
+}

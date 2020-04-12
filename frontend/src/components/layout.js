@@ -1,20 +1,22 @@
-import React from "react"  
+import React from "react"
 import PropTypes from "prop-types"
-import '../styles/layout.css'
 
 import Seo from "./seo"
 
-const Layout = ({ children }) => {  
+import "../styles/default.css"
+import "../styles/layout.scss"
+
+const Layout = ({ children }) => {
   return (
     <>
-      <Seo title = 'SCSF' />
+      <Seo title="SCSF" />
       <main>{children}</main>
     </>
   )
 }
 
-Layout.propTypes = {  
+Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export default Layout 
+export default Layout

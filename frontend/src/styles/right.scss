@@ -1,0 +1,44 @@
+@import "./global";
+
+.rightContainer {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 2fr auto 1fr;
+  padding-right: 10%;
+  .first {
+    width: 80%;
+    margin-left: auto;
+    font-size: $bodyText;
+    line-height: 120%;
+    p {
+      width: 100%;
+      text-align: right;
+    }
+  }
+  .third {
+    h1 {
+      width: 100%;
+      text-align: right;
+      font-family: balboa, sans-serif;
+      font-weight: bolder;
+      font-size: $largeText;
+      color: #c1b267;
+    }
+    p {
+      font-size: $bodyText;
+      font-style: italic;
+      width: 100%;
+      text-align: right;
+      padding-right: 3%;
+    }
+    .lineTwo {
+      height: 0.4vw;
+      width: 70%;
+      background-color: #c1b267;
+      margin-left: auto;
+      margin-right: 3%;
+      margin-top: 17%;
+      border-radius: 0.3vw;
+    }
+  }
+}

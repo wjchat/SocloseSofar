@@ -1,8 +1,8 @@
-require("dotenv").config({  
+require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
-module.exports = {  
+module.exports = {
   siteMetadata: {
     title: "So Close So Far",
     description: "Project by Matte",
@@ -10,6 +10,7 @@ module.exports = {
   },
   plugins: [
     "gatsby-plugin-react-helmet",
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -45,9 +46,9 @@ module.exports = {
       resolve: "gatsby-plugin-react-svg",
       options: {
         rule: {
-          include: /assets/ 
-        }
-      }
+          include: /assets/,
+        },
+      },
     },
     "gatsby-plugin-offline",
   ],

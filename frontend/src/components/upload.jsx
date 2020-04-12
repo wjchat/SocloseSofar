@@ -3,11 +3,7 @@ import axios from "axios"
 
 import "../styles/upload.css"
 
-/**
-  Return percent of value / total
-  @param {int} value
-  @param (int) total
-*/
+
 
 const calcPercent = (value, total) => `${Math.round((value / total) * 100)}%`
 export default class FileUpload extends React.Component {
