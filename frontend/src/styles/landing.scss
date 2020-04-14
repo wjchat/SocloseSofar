@@ -1,0 +1,71 @@
+@import "./global";
+
+.landingContainer {
+    background-color: black;
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 65% 1fr;
+    div{
+        position: relative;
+    }
+}
+.flexbox{
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 53% 1fr;
+    width: 100%;
+    margin: auto;
+}
+.arrow {
+    position: relative;
+    width: 2.5%;
+    top: 100%;
+    left: 48.75%;
+    max-height: 13px;
+    cursor: pointer;
+    opacity: 0;
+    animation: arrowSlideIn 2s 0.5s forwards ease-in-out;
+}
+
+.arrow:hover ~ .bottomText {
+  opacity: 1;
+}
+.bottomText{
+    position: relative;
+    font-size: $bodyText;
+    padding-top: 5px;
+    width: 100%;
+    top: 36%;
+    text-align: center;
+    font-family: garamond;
+    color: $greyX;
+    opacity: 0;
+    transition: all 1s;
+}
+.logoContainer{
+    // background-color: orange;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .logo{
+        position: relative;
+        left: 45%;
+        width: 10%;
+    }
+}
+.bottomContainer{
+  // background-color: orange;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 2%;
+}
+
+@keyframes arrowSlideIn {
+  0% { top: 100%; }
+  100% {top: 48%; opacity: 1; }
+}

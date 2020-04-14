@@ -1,7 +1,7 @@
 import React from "react"
 import axios from "axios"
 
-import "../styles/upload.css"
+import "../styles/upload.scss"
 
 /**
   Return percent of value / total
@@ -45,8 +45,22 @@ export default class FileUpload extends React.Component {
     return (
       <div className="uploadContainer">
         <form onSubmit={this.handleSubmit}>
-          <input onChange={this.handleChange} type="file" />
-          <button>Submit</button>
+          <input 
+            className="email" 
+            type="text" 
+            placeholder="Email"
+          />
+          <br/>
+          <br/>
+          <br/>
+          <input 
+            onChange={this.handleChange} 
+            type="file" 
+            className="fileUp" 
+          />
+          <label for="file">Choose a file</label>
+          <br/>
+          <button className="sub">Submit</button>
         </form>
         <div className="Progress">
           <div className="Progress_Seek" style={{ width: `${percent}` }}></div>

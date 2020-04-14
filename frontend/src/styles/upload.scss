@@ -1,0 +1,67 @@
+@import "./global";
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+.uploadContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /* top: 20%; */
+  /* left: 50%; */
+  justify-content: center;
+  // background-color: blue;
+}
+.Progress,
+.Progress_Seek {
+  height: 3px;
+}
+
+.Progress {
+  width: 50%;
+  background-color: grey;
+  margin: auto;
+  margin-top: 10px;
+}
+.Progress_Seek {
+  background-color: green;
+}
+
+.fileUp {
+  background-color: yellow;
+  cursor: pointer;
+}
+
+button {
+  width: 50%;
+  height: 150%;
+  border-radius: 0;
+  border: 0;
+  font-size: 1.3vw;
+  background-color: $goldX;
+  font-family: balboa, sans-serif;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+.email {
+  height: 100%;
+  width: 50%;
+  font-family: garamond;
+  border: solid $greyX .2vh;
+  background-color: black;
+  color: $greyX;
+}
+
+.email:focus::placeholder {
+  color: transparent;
+}
+
+.email:focus {
+  border: solid $goldX .2vh;
+}
+

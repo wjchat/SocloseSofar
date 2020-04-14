@@ -1,0 +1,30 @@
+.submissionContainer {
+  display: grid;
+  grid-template-rows: 1fr 75% 1fr;
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
+  div{
+    position: relative;
+  }
+}
+
+.topContain {
+  height: 100%;
+  width: 100%;
+  // background-color: pink;
+}
+
+.flexSub {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  width: 100%;
+  margin: auto;
+  // background-color: red;
+}
+
+.bottomContain {
+  height: 100%;
+  width: 100%;
+  // background-color: pink;
+}

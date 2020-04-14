@@ -1,7 +1,5 @@
 import React from "react"  
 import PropTypes from "prop-types"
-import '../styles/layout.css'
-
 import Seo from "./seo"
 
 const Layout = ({ children }) => {  

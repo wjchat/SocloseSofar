@@ -1,0 +1,62 @@
+@import "./global";
+
+.subpromptContainer {
+  // background-color: blue;
+  justify-content: right;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 2fr .5fr;
+  margin: auto;
+  // overflow: hidden;
+}
+
+.firstSub {
+  // background-color: green;
+  .title {
+    margin: auto; 
+    height: 100%;
+    font-family: balboa, sans-serif;
+    font-weight: bolder;
+    font-size: $giantText;
+    text-align: right;
+    color: $goldX;
+  }
+  .line {
+    position: absolute;
+    height: 1.5%;
+    width: 130%;
+    left: -30%;
+    top: 115%;
+    background-color: $goldX;
+  }
+}
+
+
+.secondSub {
+  // background-color: orange;
+  .blurbOne {
+    // background-color: blue;;
+    margin: auto;
+    position: relative;
+    font-family: garamond;
+    font-weight: 500;
+    font-size: $bodyText;
+    line-height: 120%;
+    left: -30%;
+    top: 45%;
+    color: #808080;
+  }
+  
+  .blurbTwo {
+    // background-color: blue;
+    position: relative;
+    font-family: garamond;
+    font-weight: 500;
+    font-size: $bodyText;
+    line-height: 120%;
+    top: 12.5%;
+    left: 49%;
+    color: #808080;
+  }
+}

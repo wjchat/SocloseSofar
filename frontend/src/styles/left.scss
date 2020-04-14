@@ -1,0 +1,25 @@
+
+@import './global';
+
+.leftContainer {
+  // background-color: red;
+  top:-3%;
+  font-family: balboa, sans-serif;
+  font-weight: bolder;
+  font-size: $largeText ;
+  line-height: 399%;
+  padding-left: 17.25%;
+}
+.titleBright {
+  // background-color: blue;
+  position: relative;
+  color: $goldX;
+  margin-top: -.5 * $largeText;
+}
+
+.titleDark {
+  position: absolute;
+  top: $largeText * .55;
+  color: #202121;
+}
+
