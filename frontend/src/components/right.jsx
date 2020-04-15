@@ -1,8 +1,7 @@
 import React from "react"
 import "../styles/right.scss"
 
-export default ({ children }) => {
-  //lineOne is invisible right now, peep CSS for the deets
+export default (props) => {
   return (
     <div className="rightContainer">
       <div className = 'first'>
@@ -22,7 +21,7 @@ export default ({ children }) => {
       </div>
 
       <div className = 'third'>
-        <h1 className="counter">641</h1>
+        <h1 className="counter">{props.count}</h1>
         <p className="counterCaption">stories told</p>
         <div className="lineTwo"></div>
       </div>

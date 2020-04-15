@@ -28,17 +28,18 @@
     h1 {
       position: absolute;
       width: 82.5%;
+      top: -3%;
       text-align: right;
       font-family: balboa, sans-serif;
       font-weight: bolder;
-      font-size: 4vw;
+      font-size: 4.4vw;
       color: $goldX;
     }
     p {
       position: absolute;
-      top: 40%;
+      top: 41%;
       font-size: 1.3vw;
-      font-style: italic;
+      // font-style: italic;
       font-family: garamond;
       width: 82.5%;
       text-align: right;

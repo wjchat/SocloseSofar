@@ -6,7 +6,7 @@ import Arrow from "../../public/assets/Arrow.svg";
 import Matte from "../../public/assets/Matte.svg";
 import '../styles/landing.scss'
 
-export default ({ children }) => {
+export default (props) => {
 
   const handleClick = () => {
     window.scrollTo({top:1000, left:0, behavior:"smooth"});
@@ -25,7 +25,9 @@ export default ({ children }) => {
           <Video />
         </div>
         <div>
-          <Right />
+          <Right 
+            count={props.count}
+          />
         </div>
       </div>
       <div className = 'bottomContainer'>

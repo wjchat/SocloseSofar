@@ -1,6 +1,5 @@
 import React from "react"
 import axios from "axios"
-
 import "../styles/upload.scss"
 
 /**
@@ -38,6 +37,8 @@ export default class FileUpload extends React.Component {
         }),
     })
     this.setState({ loading: false, uploaded: true })
+    console.log(this.props.count)
+    this.props.setCount(this.props.count + 1)
   }
   render() {
     const { percent, loading, uploaded } = this.state
