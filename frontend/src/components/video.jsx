@@ -1,6 +1,6 @@
 import React from "react"
 import ReactPlayer from 'react-player'
-import '../styles/video.css'
+import '../styles/video.scss'
 
 import { useStaticQuery, graphql } from "gatsby"
 

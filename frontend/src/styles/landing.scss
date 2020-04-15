@@ -18,11 +18,10 @@
     margin: auto;
 }
 .arrow {
-    position: relative;
+    position: absolute;
     width: 2.5%;
-    top: 100%;
     left: 48.75%;
-    max-height: 13px;
+    max-height: 15px;
     cursor: pointer;
     opacity: 0;
     animation: arrowSlideIn 2s 0.5s forwards ease-in-out;
@@ -53,8 +52,8 @@
     justify-content: center;
     .logo{
         position: relative;
-        left: 45%;
-        width: 10%;
+        left: 45.875%;
+        width: 8.25%;
     }
 }
 .bottomContainer{
