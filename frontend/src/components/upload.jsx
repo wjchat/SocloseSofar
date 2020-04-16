@@ -19,6 +19,12 @@ export default class FileUpload extends React.Component {
     message: ""
   }
 
+  handleClick = () => {  
+    if (this.state.uploaded) {
+      this.setState( { uploaded: false })
+    }
+  }
+
   handleXClick = () => {
     this.setState({file: null})
   }
@@ -78,6 +84,7 @@ export default class FileUpload extends React.Component {
 
         <form onSubmit={this.handleSubmit} className="uploadForm">
           <input 
+            onClick={this.handleClick}
             onChange={this.handleEmailChange}
             className="email" 
             type="text" 
@@ -87,6 +94,7 @@ export default class FileUpload extends React.Component {
           <br/>
           <input 
             onChange={this.handleFileChange} 
+            onClick={this.handleClick}
             ref={fileInput => (this.fileInput = fileInput)}
             type="file" 
             id="file"
