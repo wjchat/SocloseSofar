@@ -15,7 +15,7 @@
     right:10.5%;
     margin-left: auto;
     font-size: $bodyText;
-    line-height: 130%;
+    line-height: $bodyLineHeight;
     p {
       width: 90%;
       text-align: right;
@@ -37,9 +37,8 @@
     }
     p {
       position: absolute;
-      top: 41%;
-      font-size: 1.3vw;
-      // font-style: italic;
+      top: 42%;
+      font-size: $biggerBodyText;
       font-family: garamond;
       width: 82.5%;
       text-align: right;

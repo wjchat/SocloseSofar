@@ -8,7 +8,6 @@
   display: grid;
   grid-template-rows: 2fr .5fr;
   margin: auto;
-  // overflow: hidden;
 }
 
 .firstSub {
@@ -25,8 +24,8 @@
   .line {
     position: absolute;
     height: 1.5%;
-    width: 130%;
-    left: -30%;
+    width: 120%;
+    left: -20%;
     top: 114%;
     background-color: $goldX;
   }
@@ -35,15 +34,15 @@
 
 .secondSub {
   // background-color: orange;
+  font-size: $bodyText;
+  font-family: garamond;
+  line-height: $bodyLineHeight;
+
   .blurbOne {
     // background-color: blue;;
     margin: auto;
     position: relative;
-    font-family: garamond;
-    font-weight: 500;
-    font-size: $bodyText;
-    line-height: 130%;
-    left: -30%;
+    left: -20%;
     top: 40.5%;
     color: #808080;
   }
@@ -51,10 +50,6 @@
   .blurbTwo {
     // background-color: red;
     position: relative;
-    font-family: garamond;
-    font-weight: 500;
-    font-size: $bodyText;
-    line-height: 130%;
     top: 8%;
     left: 49%;
     color: #808080;

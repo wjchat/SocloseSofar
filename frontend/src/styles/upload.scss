@@ -8,53 +8,29 @@ button:focus {
 }
 
 .uploadContainer {
-  position: relative;
+  // background-color: blue;
   width: 100%;
   height: 100%;
-  /* top: 20%; */
-  /* left: 50%; */
-  justify-content: center;
-  // background-color: blue;
-}
-.Progress,
-.Progress_Seek {
-  height: 3px;
 }
 
-.Progress {
-  width: 50%;
-  background-color: grey;
-  margin: auto;
-  margin-top: 10px;
-}
-.Progress_Seek {
-  background-color: green;
-}
-
-.fileUp {
-  background-color: yellow;
-  cursor: pointer;
-}
-
-button {
-  width: 50%;
-  height: 150%;
-  border-radius: 0;
-  border: 0;
-  font-size: 1.3vw;
-  background-color: $goldX;
-  font-family: balboa, sans-serif;
-  font-weight: bolder;
-  cursor: pointer;
+.uploadForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  height: 63.5%;
+  width: 100%;
 }
 
 .email {
-  height: 100%;
+  height: 15%;
   width: 50%;
-  font-family: garamond;
-  border: solid $greyX .2vh;
   background-color: black;
   color: $greyX;
+  border: solid $greyX .2vh;
+  font-size: $biggerBodyText;
+  font-family: balboa, sans serif;
+  text-indent: 1.3vw;
 }
 
 .email:focus::placeholder {
@@ -63,5 +39,111 @@ button {
 
 .email:focus {
   border: solid $goldX .2vh;
+}
+
+input[type="file"] {
+  background-color: red;
+  display: none;
+}
+
+.fileUpload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 15%;
+  width: 50%;
+  background-color: black;
+  color: $goldX;
+  border: solid $goldX .2vh;
+  font-family: balboa, sans-serif;
+  font-weight: bolder;
+  font-size: $biggerBodyText;
+  cursor: pointer;
+}
+
+.uploaded {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 15%;
+  width: 50%;
+  background-color: $goldX;
+  color: black;
+  border: solid $goldX .2vh;
+  font-family: balboa, sans-serif;
+  font-weight: bolder;
+  font-size: $biggerBodyText;
+  text-indent: 1.3vw;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.fileUpload:hover {
+  background-color: $goldX;
+  color: black;
+}
+
+.x-container {
+  position: absolute;
+  left: 80%;
+  top: 40.5%;
+}
+
+.x-active {
+  position: absolute;
+  color: $goldX;
+  font-family: "HelveticaNeue-Light";
+  font-weight: 100;
+  font-size: 1.5vw;
+  cursor: pointer;
+}
+
+
+.formSubmit {
+  height: 15%;
+  width: 50%;
+  background-color: black;
+  color: $goldX;
+  border-radius: 0;
+  border: solid $goldX .2vh;
+  font-size: 1.3vw;
+  font-family: balboa, sans-serif;
+  font-weight: bolder;
+  font-size: $biggerBodyText;
+  cursor: pointer;
+}
+
+.formSubmit:hover {
+  background-color: $goldX;
+  color: black;
+}
+
+.uploadCaption {
+  // background-color: green;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 12%;
+  color: $greyX;
+  font-family: garamond;
+  font-size: $bodyText;
+}
+
+.Progress,
+.Progress_Seek {
+  height: 3px;
+}
+
+.Progress {
+  width: 50%;
+  background-color: transparent;
+  margin: auto;
+  margin-top: 3.5%;
+}
+.Progress_Seek {
+  background-color: $goldX;
 }
 

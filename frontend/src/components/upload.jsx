@@ -15,59 +15,98 @@ export default class FileUpload extends React.Component {
     percent: 0,
     loading: false,
     uploaded: false,
+    email: "",
+    message: ""
   }
 
-  handleChange = event => {
+  handleXClick = () => {
+    this.setState({file: null})
+  }
+
+  handleFileChange = event => {
     this.setState({ file: event.target.files[0], percent: 0, uploaded: false })
+    this.fileInput.value = ""
+  }
+
+  handleEmailChange = event => {
+    this.setState({ email: event.target.value })
   }
 
   handleSubmit = async event => {
     event.preventDefault()
-    this.setState({ loading: true })
-    const data = new FormData()
-    data.append("files", this.state.file)
 
-    const upload_res = await axios({
-      method: "POST",
-      url: "http://localhost:1337/upload",
-      data: data,
-      onUploadProgress: progress =>
-        this.setState({
-          percent: calcPercent(progress.loaded, progress.total),
-        }),
-    })
-    this.setState({ loading: false, uploaded: true })
-    console.log(this.props.count)
-    this.props.setCount(this.props.count + 1)
+    if (!this.state.file && !this.state.email) {
+      this.setState({ message: "Please Enter Your Email And Select Video File"})
+    }
+
+    if (this.state.file && !this.state.email) {
+      this.setState({ message: "Please Enter Your Email"})
+    }
+
+    if (!this.state.file && this.state.email) {
+      this.setState({ message: "Please Select Video File"})
+    }
+
+    if (this.state.file && this.state.email) {
+      this.setState({ loading: true })
+      const data = new FormData()
+      data.append("files", this.state.file)
+  
+      const upload_res = await axios({
+        method: "POST",
+        url: "http://localhost:1337/upload",
+        data: data,
+        onUploadProgress: progress =>
+          this.setState({
+            percent: calcPercent(progress.loaded, progress.total),
+          }),
+      })
+      this.setState({ loading: false, uploaded: true, file: null, email: "", message: "" })
+      this.props.setCount(this.props.count + 1)
+    }
+
   }
   render() {
     const { percent, loading, uploaded } = this.state
     console.log("percent", percent)
     return (
       <div className="uploadContainer">
-        <form onSubmit={this.handleSubmit}>
+
+        <div className="x-container">
+          {this.state.file && <h1 className="x-active" onClick={this.handleXClick}>X</h1>}
+        </div>
+
+        <form onSubmit={this.handleSubmit} className="uploadForm">
           <input 
+            onChange={this.handleEmailChange}
             className="email" 
             type="text" 
-            placeholder="Email"
+            placeholder="Enter Email"
+            value={this.state.email}
           />
-          <br/>
-          <br/>
           <br/>
           <input 
-            onChange={this.handleChange} 
+            onChange={this.handleFileChange} 
+            ref={fileInput => (this.fileInput = fileInput)}
             type="file" 
-            className="fileUp" 
+            id="file"
           />
-          <label for="file">Choose a file</label>
+          <label for="file" className={this.state.file ? "uploaded" : "fileUpload"}>
+            {this.state.file ? this.state.file.name : "Choose File"}
+          </label>
           <br/>
-          <button className="sub">Submit</button>
+          <button className="formSubmit">Submit</button>
         </form>
-        <div className="Progress">
+
+        {/* <div className="Progress">
           <div className="Progress_Seek" style={{ width: `${percent}` }}></div>
+        </div> */}
+
+        <div className="uploadCaption"> 
+          {this.state.message && <p>{this.state.message}</p>}
+          {/* {loading && <p>Working...</p>} */}
+          {uploaded && !this.state.message && <p>Thank You</p>}
         </div>
-        {loading && <p>Uploading...</p>}
-        {uploaded && <p>File successfully uploaded</p>}
       </div>
     )
   }
