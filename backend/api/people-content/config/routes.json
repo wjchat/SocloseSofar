@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/people-contents",
+      "handler": "people-content.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/people-contents/count",
+      "handler": "people-content.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/people-contents/:id",
+      "handler": "people-content.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/people-contents",
+      "handler": "people-content.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/people-contents/:id",
+      "handler": "people-content.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/people-contents/:id",
+      "handler": "people-content.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

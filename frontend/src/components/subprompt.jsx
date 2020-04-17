@@ -10,9 +10,11 @@ export default ({ children }) => {
           We Want
           <br/>
           To Hear
+          <br/> 
+          {`Your `} 
+          <span className = 'break'>
           <br/>
-          Your
-          <br/>
+          </span>
           Voice
         </h1>
         <div className="line"></div>

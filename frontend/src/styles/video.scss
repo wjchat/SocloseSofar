@@ -1,10 +1,25 @@
+@import './global';
+
 .vidContainer {
   /* position: absolute; */
-  height: 95%;
   width: 100%;
-  left: 0%;
-  top: -1.5%;
+height: 92.4%;
+    
+    margin-top: auto;
   /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @include mobile{
+        padding-top: 10%;
+        box-sizing: border-box;
+    }
+    video{
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+    
 }
 
 div:focus {

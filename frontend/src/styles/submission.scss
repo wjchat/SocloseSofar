@@ -1,9 +1,15 @@
+@import './global';
 .submissionContainer {
   display: grid;
   grid-template-rows: 1fr 75% 1fr;
   height: 100vh;
   width: 100vw;
   background-color: black;
+    @include mobile{
+        grid-template-rows: 1fr;
+        height: auto;
+        margin-top: 150%;
+    }
   div{
     position: relative;
   }
@@ -21,6 +27,10 @@
   width: 100%;
   margin: auto;
   // background-color: red;
+    @include mobile{
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 .bottomContain {

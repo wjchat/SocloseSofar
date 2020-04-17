@@ -6,3 +6,13 @@ $desktopFreeze: 850px;
 $goldX: #d3c371;
 $greyX: #808080;
 $bodyLineHeight: 130%;
+
+$mobile-width: 450px;
+
+
+@mixin mobile {
+  @media (max-width: #{$mobile-width}) {
+    @content;
+  }
+}
+

@@ -20,6 +20,25 @@ button:focus {
   justify-content: flex-end;
   height: 63.5%;
   width: 100%;
+    @include mobile{
+        height: 30vh;
+        justify-content: center;
+    }
+    input{
+        @include mobile{
+            font-size: 6vw;
+        }    
+    }
+    label{
+        @include mobile{
+            font-size: 6vw;
+        }
+    }        
+    button{
+        @include mobile{
+            font-size: 6vw;
+        }
+    }    
 }
 
 .email {
@@ -31,6 +50,7 @@ button:focus {
   font-size: $biggerBodyText;
   font-family: balboa, sans serif;
   text-indent: 1.3vw;
+
 }
 
 .email:focus::placeholder {
@@ -130,6 +150,9 @@ input[type="file"] {
   color: $greyX;
   font-family: garamond;
   font-size: $bodyText;
+    @include mobile{
+        font-size: 6vw;
+    }
 }
 
 .Progress,
@@ -146,4 +169,5 @@ input[type="file"] {
 .Progress_Seek {
   background-color: $goldX;
 }
+
 

@@ -4,6 +4,9 @@ import "../styles/left.scss"
 export default ({ children }) => {
   return (
     <div className="leftContainer">
+        <h1 className = "titleBright small">
+            So <br/> Close <br/>So Far
+        </h1>
       <h1 className="titleBright">
         So
         <br />

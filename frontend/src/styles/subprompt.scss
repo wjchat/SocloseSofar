@@ -8,6 +8,15 @@
   display: grid;
   grid-template-rows: 2fr .5fr;
   margin: auto;
+    @include mobile{
+        padding-right: 10%;
+        box-sizing: border-box;
+        margin: auto;
+        margin-top: 10%;
+        display: flex;
+        flex-direction: column;
+        ;
+    }
 }
 
 .firstSub {
@@ -20,6 +29,14 @@
     font-size: $giantText;
     text-align: right;
     color: $goldX;
+      @include mobile{
+          font-size: 14vw;
+      }
+      .break{
+          @include mobile{
+              display: none;
+          }
+      }
   }
   .line {
     position: absolute;
@@ -28,6 +45,9 @@
     left: -20%;
     top: 114%;
     background-color: $goldX;
+      @include mobile{
+          display: none;
+      }
   }
 }
 
@@ -37,6 +57,12 @@
   font-size: $bodyText;
   font-family: garamond;
   line-height: $bodyLineHeight;
+    
+    @include mobile{
+        font-size: 6vw;
+        padding-left: 10%;
+        margin-top: 10%;
+    }
 
   .blurbOne {
     // background-color: blue;;
@@ -45,13 +71,21 @@
     left: -20%;
     top: 40.5%;
     color: #808080;
+      @include mobile{
+          left: 0;
+          top: 0;
+      }
   }
-  
+   
   .blurbTwo {
     // background-color: red;
     position: relative;
     top: 8%;
     left: 49%;
     color: #808080;
+    @include mobile{
+          left: 0;
+          top: 0;
+      }
   }
 }

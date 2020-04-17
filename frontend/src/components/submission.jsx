@@ -5,7 +5,7 @@ import '../styles/submission.scss'
 
 export default (props) => {
   return (
-    <div className="submissionContainer">
+    <div className="submissionContainer"> 
       <div className="topContain"></div>
 
       <div className="flexSub">

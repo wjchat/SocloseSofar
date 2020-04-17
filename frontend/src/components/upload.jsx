@@ -18,7 +18,11 @@ export default class FileUpload extends React.Component {
     email: "",
     message: ""
   }
-
+  handleClick = () => {  
+    if (this.state.uploaded) {
+      this.setState( { uploaded: false })
+    }
+  }
   handleXClick = () => {
     this.setState({file: null})
   }
@@ -51,16 +55,26 @@ export default class FileUpload extends React.Component {
       this.setState({ loading: true })
       const data = new FormData()
       data.append("files", this.state.file)
-  
       const upload_res = await axios({
         method: "POST",
         url: "http://localhost:1337/upload",
-        data: data,
+        data: data, 
         onUploadProgress: progress =>
           this.setState({
             percent: calcPercent(progress.loaded, progress.total),
           }),
       })
+      
+      console.log(upload_res.data[0].url)
+      const dataBaseEntry = await axios({
+          method: "POST",
+          url: "http://localhost:1337/people-contents",
+          data: {
+              email: this.state.email,
+              content: upload_res.data[0],
+          }
+      })
+
       this.setState({ loading: false, uploaded: true, file: null, email: "", message: "" })
       this.props.setCount(this.props.count + 1)
     }
@@ -68,7 +82,6 @@ export default class FileUpload extends React.Component {
   }
   render() {
     const { percent, loading, uploaded } = this.state
-    console.log("percent", percent)
     return (
       <div className="uploadContainer">
 
@@ -78,6 +91,7 @@ export default class FileUpload extends React.Component {
 
         <form onSubmit={this.handleSubmit} className="uploadForm">
           <input 
+           onClick={this.handleClick}
             onChange={this.handleEmailChange}
             className="email" 
             type="text" 
@@ -86,10 +100,12 @@ export default class FileUpload extends React.Component {
           />
           <br/>
           <input 
+           onClick={this.handleClick}
             onChange={this.handleFileChange} 
             ref={fileInput => (this.fileInput = fileInput)}
             type="file" 
             id="file"
+            accept = "video/*"
           />
           <label for="file" className={this.state.file ? "uploaded" : "fileUpload"}>
             {this.state.file ? this.state.file.name : "Choose File"}

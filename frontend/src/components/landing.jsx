@@ -18,13 +18,13 @@ export default (props) => {
         <Matte className="logo"/>
       </div>
       <div className="flexbox">
-        <div>
+        <div className = 'left'>
           <Left />
         </div>
-        <div>
+        <div className = 'video'>
           <Video />
         </div>
-        <div>
+        <div className = 'right'>
           <Right 
             count={props.count}
           />
