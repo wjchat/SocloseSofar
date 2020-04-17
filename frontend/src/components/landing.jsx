@@ -13,27 +13,54 @@ export default (props) => {
   }
 
   return (
-    <div className="landingContainer">
-      <div className="logoContainer">
-        <Matte className="logo"/>
-      </div>
-      <div className="flexbox">
-        <div className = 'left'>
-          <Left />
+    <div>
+      <div className="landingContainer">
+        <div className="logoContainer">
+          <a href="http://www.matteprojects.com" target="_blank">
+            <Matte className="logo"/>
+          </a>
         </div>
-        <div className = 'video'>
-          <Video />
+        <div className="flexbox">
+          <div className = 'left'>
+            <Left />
+          </div>
+          <div className = 'video'>
+            <Video />
+          </div>
+          <div className = 'right'>
+            <Right 
+              count={props.count}
+            />
+          </div>
         </div>
-        <div className = 'right'>
-          <Right 
-            count={props.count}
-          />
+        <div className = 'bottomContainer'>
+          <Arrow className="arrow" onClick={handleClick}/> 
+          <p className = 'bottomText'>tell your story</p>
         </div>
       </div>
-      <div className = 'bottomContainer'>
-        <Arrow className="arrow" fill="white" onClick={handleClick}/> 
-        <p className = 'bottomText'>tell your story</p>
+
+      <div className="landingContainerMobile">
+        <div className="logoContainerMobile">
+          <a href="http://www.matteprojects.com" target="_blank" className="logoMobile">
+            <Matte/>
+          </a>
+        </div>
+        <div className="flexboxMobile">
+          <div className = 'videoMobile'>
+            <Video />
+          </div>
+          <div className = 'leftMobile'>
+            <Left />
+          </div>
+          <div className = 'rightMobile'>
+            <Right 
+              count={props.count}
+            />
+          </div>
+        </div>
+        <div className = 'bottomContainerMobile'></div>
       </div>
+
     </div>
 )
 }

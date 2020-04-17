@@ -18,9 +18,21 @@ export default class FileUpload extends React.Component {
     email: "",
     message: ""
   }
-  handleClick = () => {  
+
+  validateEmail = () => {
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.state.email)) { 
+      return true 
+    }    
+    return false
+  };
+
+  handleClick = () => { 
     if (this.state.uploaded) {
-      this.setState( { uploaded: false })
+      this.setState( { uploaded: false } )
+    }
+
+    if (this.state.message) {
+      this.setState ( { message: ""} )
     }
   }
   handleXClick = () => {
@@ -36,48 +48,66 @@ export default class FileUpload extends React.Component {
     this.setState({ email: event.target.value })
   }
 
-  handleSubmit = async event => {
+  handleSubmit = (event) => {
     event.preventDefault()
 
-    if (!this.state.file && !this.state.email) {
-      this.setState({ message: "Please Enter Your Email And Select Video File"})
+    if (this.state.email && this.state.file) {
+      const check =  this.validateEmail()
+
+      if (check) {
+        this.submitForm()
+      } else {
+        this.setState({ message: "Please enter valid email address"})
+      }
     }
 
-    if (this.state.file && !this.state.email) {
-      this.setState({ message: "Please Enter Your Email"})
+    if (this.state.email && !this.state.file) {
+      const check =  this.validateEmail()
+
+      if (check) {
+        this.setState({ message: "Please select video file"})
+      } else {
+        this.setState({ message: "Please enter valid email address"})
+      }
     }
 
-    if (!this.state.file && this.state.email) {
-      this.setState({ message: "Please Select Video File"})
+    if (!this.state.email && this.state.file) {
+      this.setState({ message: "Please enter your email"})
     }
 
-    if (this.state.file && this.state.email) {
-      this.setState({ loading: true })
-      const data = new FormData()
-      data.append("files", this.state.file)
-      const upload_res = await axios({
+    if (!this.state.email && !this.state.file) {
+      this.setState({ message: "Please enter your email and select video file"})
+    }
+
+  }
+
+  submitForm = async event => {
+
+    this.setState({ loading: true })
+    const data = new FormData()
+    data.append("files", this.state.file)
+    const upload_res = await axios({
+      method: "POST",
+      url: "http://localhost:1337/upload",
+      data: data, 
+      onUploadProgress: progress =>
+        this.setState({
+          percent: calcPercent(progress.loaded, progress.total),
+        }),
+    })
+    
+    console.log(upload_res.data[0].url)
+    const dataBaseEntry = await axios({
         method: "POST",
-        url: "http://localhost:1337/upload",
-        data: data, 
-        onUploadProgress: progress =>
-          this.setState({
-            percent: calcPercent(progress.loaded, progress.total),
-          }),
-      })
-      
-      console.log(upload_res.data[0].url)
-      const dataBaseEntry = await axios({
-          method: "POST",
-          url: "http://localhost:1337/people-contents",
-          data: {
-              email: this.state.email,
-              content: upload_res.data[0],
-          }
-      })
+        url: "http://localhost:1337/people-contents",
+        data: {
+            email: this.state.email,
+            content: upload_res.data[0],
+        }
+    })
 
-      this.setState({ loading: false, uploaded: true, file: null, email: "", message: "" })
-      this.props.setCount(this.props.count + 1)
-    }
+    this.setState({ loading: false, uploaded: true, file: null, email: "", message: "" })
+    this.props.setCount(this.props.count + 1)
 
   }
   render() {
@@ -86,7 +116,10 @@ export default class FileUpload extends React.Component {
       <div className="uploadContainer">
 
         <div className="x-container">
-          {this.state.file && <h1 className="x-active" onClick={this.handleXClick}>X</h1>}
+          {
+            this.state.file ? <h1 className="x-active" onClick={this.handleXClick}>X</h1> :
+            <h1 className="x-inactive" >X</h1>
+          }
         </div>
 
         <form onSubmit={this.handleSubmit} className="uploadForm">
@@ -119,9 +152,8 @@ export default class FileUpload extends React.Component {
         </div> */}
 
         <div className="uploadCaption"> 
-          {this.state.message && <p>{this.state.message}</p>}
-          {/* {loading && <p>Working...</p>} */}
-          {uploaded && !this.state.message && <p>Thank You</p>}
+          {this.state.message && <p className="captionContent">{this.state.message}</p>}
+          {uploaded && !this.state.message && <p className="captionContent">Thank You</p>} 
         </div>
       </div>
     )

@@ -14,6 +14,11 @@ export default (props) => {
           <br/>
           We invite you to help us tell the story of the world.
         </p>
+        <p className="blurbMobile">
+          In a time of unprecedented devastation and uncertainity, everybody has
+          a story. Matte Projects believes your experience needs to be heard.
+          We invite you to help us tell the story of the world.
+        </p>
       </div>
 
       <div className = 'second'>

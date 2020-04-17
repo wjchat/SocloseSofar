@@ -1,11 +1,35 @@
+@import './global';
+
 .bg {
   position: absolute;
   left: 0%;
   top: 0%;
   background-color: #000000;
   width: 100%;
-  overflow: hidden;
-  min-height: 210vh;
-    height: auto;
+  height: 100vh;
+  overflow-x: hidden;
+  min-height: 200vh;
+  z-index: -15;
+  opacity: 1;
+  animation: fadeIn 1s forwards ease-out
+}
+
+.gb {
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  background-color: #000000;
+  width: 100%;
+  overflow-x: hidden;
+  min-height: 200vh;
+  z-index: -18;
+  @include mobile {
+    height: 100vh;
+  }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0% }
+  100% {opacity: 1; }
 }
 

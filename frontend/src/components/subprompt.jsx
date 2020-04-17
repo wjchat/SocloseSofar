@@ -28,15 +28,13 @@ export default ({ children }) => {
           and tell us how you feel.
         </p>
         <p className="blurbTwo">
-          We’ll be taking the vignettes,
+          We’ll be taking the videos
           <br/>
-          words, and fragments submitted
+          submitted to create a living audio
           <br/>
-          to create a quilt of sorts, a living
+          visual patchwork for and by all of us
           <br/>
-          audio visual patchwork for and by
           <br/>
-          all of us.
         </p>
       </div>
 

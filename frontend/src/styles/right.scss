@@ -14,6 +14,20 @@
         height: auto;
         width: 100%;
         margin-left: auto;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas: 
+            "a"
+            "b"
+            "c"; 
+        .first{
+          grid-area: a;
+        }
+        .third{
+          grid-area: b;
+        }
+        .second{
+          grid-area: c;
+        }
     }
   .first {
     width: 67%;
@@ -25,22 +39,39 @@
           width: 100%;
           right: 0;
       }
-    p {
+    .blurb {
       width: 90%;
       text-align: right;
       font-family: garamond;
       color: $greyX;
         @include mobile{
-            font-size: 6vw;
-            line-height: 100%;
-            width: 90%;
-            margin-left: auto;
-            padding-right: 10%;
-            box-sizing: border-box;
+          display: none;
         }
+    }
+    .blurbMobile {
+      display: none;
+      @include mobile {
+        display: block;
+        font-size: 5vw;
+        text-align: right;
+        font-family: garamond;
+        color: $greyX;
+        line-height: 175%;
+        width: 90%;
+        margin-left: auto;
+        padding-right: 10%;
+        box-sizing: border-box;
+      }
     }
 
   }
+
+  .second {
+    @include mobile {
+      display: none;
+    }
+  }
+
   .third {
     h1 {
       position: absolute;
@@ -52,9 +83,11 @@
       font-size: 4.4vw;
       color: $goldX;
         @include mobile{
+            position: relative;
+            top: -11%;
             text-align: left;
             padding-left: 8%;
-            font-size: 13vw;
+            font-size: 15vw;
         }
     }
     p {
@@ -67,26 +100,28 @@
       padding-right: 100%;
       color: $greyX;
         @include mobile{
+            position: relative;
             width: 100%;
             text-align: left;
-            padding-left: 8%;
-            top: 50%;
-            font-size: 6vw;
+            padding-left: 10%;
+            top: -30%;
+            font-size: 5vw;
         }
     }
     .lineTwo {
       height: 0.4vw;
       width: 59%;
       right: 17.5%;
-      top: 50%;
+      top: 52%;
       background-color: $goldX;
       margin-left: auto;
       margin-right: 0%;
       margin-top: 20%;
-      // animation: lineSlideIn 2s 0.8s forwards ease-in-out;
         @include mobile{
-            width: 10%;
+            position: relative;
+            width: 80%;
             right: 10%;
+            top: -50%;
         }
     }
 

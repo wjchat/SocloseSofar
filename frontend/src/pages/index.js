@@ -24,11 +24,13 @@ const Index = () => {
   }, [])
 
   return (
-    <div className="bg">
-      <Layout>
-        <Landing count={count} />
-        <Submission setCount={setCount} count={count} />
-      </Layout>
+    <div className="gb">
+      <div className="bg">
+        <Layout>
+          <Landing count={count} />
+          <Submission setCount={setCount} count={count} />
+        </Layout>
+      </div>
     </div>
   )
 }

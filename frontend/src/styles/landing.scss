@@ -2,20 +2,26 @@
 
 .landingContainer {
     background-color: black;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     display: grid;
     grid-template-rows: 1fr 65% 1fr;
+    @include mobile{
+      display: none;
+    }
     div{
         position: relative;
     }
 }
+
+
 .flexbox{
-    position: relative;
-    display: grid;
-    grid-template-columns: 1fr 53% 1fr;
-    width: 100%;
-    margin: auto;
+  // background-color: blue;
+  // position:s relative;
+  display: grid;
+  grid-template-columns: 1fr 53% 1fr;
+  width: 100%;
+  margin: auto;
     @include mobile{
         height: auto;
         grid-template-columns: 1fr;
@@ -24,16 +30,16 @@
             "a"
             "b"
             "c"; 
-        .left{
+            .left{
             grid-area: b;
         }
         .right{
-            grid-area: c;
+          grid-area: c;
         }
         .video{
-            grid-area: a;
+          grid-area: a;
         }
-    }
+      }
 }
 .arrow {
     position: absolute;
@@ -51,19 +57,21 @@
 .arrow:hover ~ .bottomText {
   opacity: 1;
 }
+
+
 .bottomText{
-    position: relative;
-    font-size: $bodyText;
-    padding-top: 5px;
-    width: 100%;
-    top: 36%;
-    text-align: center;
+  position: relative;
+  font-size: $bodyText;
+  padding-top: 5px;
+  width: 100%;
+  top: 36%;
+  text-align: center;
     font-family: garamond;
     color: $greyX;
     opacity: 0;
-    transition: all 1s;
-}
-.logoContainer{
+    transition: all .8s;
+  }
+  .logoContainer{
     // background-color: orange;
     width: 100%;
     height: 100%;
@@ -71,23 +79,27 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-
-    .logo{
-        position: relative;
-        left: 45.875%;
-        width: 8.25%;
         @include mobile{
-                width: 35%;
-                margin: auto;
+          height: 55%;
+        }
+        
+    a{
+      position: relative;
+      left: 45.875%;
+      width: 8.25%;
+      @include mobile{
+        width: 35%;
+        margin: auto;
                 left: 0;
-    }
+              }
     }
 }
 .bottomContainer{
   // background-color: orange;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
     padding-bottom: 2%;
 }
 
@@ -95,3 +107,54 @@
   0% { top: 100%; }
   100% {top: 48%; opacity: 1; }
 }
+
+
+//////MOBILE CSS///////
+
+.landingContainerMobile {
+  display:none;
+  @include mobile {
+    background-color: black;
+    width: 100vw;
+    height: 60vh;
+    display: grid;
+    grid-template-rows: 1fr 100% 1fr;
+  }
+}
+
+.logoContainerMobile {
+  // background-color: red;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .logoMobile {
+    // background-color: blue;;
+    position: relative;
+    width: 100%;
+    height: 150%;
+    transform: scale(0.3);
+  }
+}
+
+.flexboxMobile {
+  // background-color: pink;
+  height: 100%;
+  grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas: 
+            "a"
+            "b"
+            "c"; 
+        .leftMobile{
+          grid-area: b;
+        }
+        .rightMobile{
+          grid-area: c;
+        }
+        .videoMobile{
+          grid-area: a;
+        }
+}
+

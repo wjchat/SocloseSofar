@@ -29,7 +29,6 @@ export default ({ children }) => {
         height="100%" 
         url={videoSRC}
         controls={true}
-        // style={{outline:none}}
       />
     </div>
 )

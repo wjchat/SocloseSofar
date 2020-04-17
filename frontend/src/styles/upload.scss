@@ -14,29 +14,34 @@ button:focus {
 }
 
 .uploadForm {
+  position: relative;
+  // background-color: blue;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
   height: 63.5%;
   width: 100%;
+  top: 5%;
     @include mobile{
-        height: 30vh;
+        z-index: 500;
+        position: relative;
+        height: auto;
         justify-content: center;
     }
     input{
         @include mobile{
-            font-size: 6vw;
+            font-size: 5vw;
         }    
     }
     label{
         @include mobile{
-            font-size: 6vw;
+            font-size: 5vw;
         }
     }        
     button{
         @include mobile{
-            font-size: 6vw;
+            font-size: 5vw;
         }
     }    
 }
@@ -50,7 +55,10 @@ button:focus {
   font-size: $biggerBodyText;
   font-family: balboa, sans serif;
   text-indent: 1.3vw;
-
+  transition: all .25s;
+    @include mobile {
+      padding: 2% 15%;
+    }
 }
 
 .email:focus::placeholder {
@@ -76,10 +84,15 @@ input[type="file"] {
   background-color: black;
   color: $goldX;
   border: solid $goldX .2vh;
+  z-index: 2;
   font-family: balboa, sans-serif;
   font-weight: bolder;
   font-size: $biggerBodyText;
   cursor: pointer;
+  transition: all .25s;
+  @include mobile {
+    padding: 2% 15%;
+  }
 }
 
 .uploaded {
@@ -95,9 +108,14 @@ input[type="file"] {
   font-weight: bolder;
   font-size: $biggerBodyText;
   text-indent: 1.3vw;
+  z-index: 2;
   overflow: hidden;
   white-space: nowrap;
   cursor: pointer;
+  transition: all .25s;
+  @include mobile {
+    padding: 2% 15%;
+  }
 }
 
 .fileUpload:hover {
@@ -106,20 +124,38 @@ input[type="file"] {
 }
 
 .x-container {
-  position: absolute;
+  background-color: pink;
+  position: relative;
   left: 80%;
-  top: 40.5%;
+  top: 45.5%;
 }
 
 .x-active {
   position: absolute;
-  color: $goldX;
+  left: -20%;
+  animation: xRollIn .35s forwards ease-out;
+  color: $greyX;
   font-family: "HelveticaNeue-Light";
   font-weight: 100;
   font-size: 1.5vw;
   cursor: pointer;
+  z-index: 1;
 }
 
+.x-active:hover {
+  color: $goldX
+}
+
+.x-inactive {
+  position: absolute;
+  left: 0%;
+  animation: xRollOut .35s .1s forwards ease-in;
+  color: $goldX;
+  font-family: "HelveticaNeue-Light";
+  font-weight: 100;
+  font-size: 1.5vw;
+  z-index: 1;
+}
 
 .formSubmit {
   height: 15%;
@@ -133,6 +169,10 @@ input[type="file"] {
   font-weight: bolder;
   font-size: $biggerBodyText;
   cursor: pointer;
+  transition: all .25s;
+  @include mobile {
+    padding: 2% 15%;
+  }
 }
 
 .formSubmit:hover {
@@ -150,9 +190,15 @@ input[type="file"] {
   color: $greyX;
   font-family: garamond;
   font-size: $bodyText;
+
     @include mobile{
         font-size: 6vw;
     }
+}
+
+.captionContent {
+  opacity: 0;
+  animation: captionFadeIn .2s forwards ease-out;
 }
 
 .Progress,
@@ -169,5 +215,24 @@ input[type="file"] {
 .Progress_Seek {
   background-color: $goldX;
 }
+
+@keyframes captionFadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes xRollIn {
+  0% { left: -20%; }
+  50% {left: 0%; transform: rotate(360deg);}
+  100% {left: 0%; transform: rotate(900deg);}
+}
+
+@keyframes xRollOut {
+  0% { left: 0%; }
+  50% {left: 4%; transform: rotate(-360%)}
+  100% {left: -20%; transform: rotate(-900deg); }
+}
+
+
 
 
