@@ -21,7 +21,7 @@ export default class FileUpload extends React.Component {
 
   handleClick = () => {  
     if (this.state.uploaded) {
-      this.setState( { uploaded: false })
+      this.setState({ uploaded: false })
     }
   }
 
@@ -98,6 +98,7 @@ export default class FileUpload extends React.Component {
             ref={fileInput => (this.fileInput = fileInput)}
             type="file" 
             id="file"
+            accept="video/*"
           />
           <label for="file" className={this.state.file ? "uploaded" : "fileUpload"}>
             {this.state.file ? this.state.file.name : "Choose File"}
