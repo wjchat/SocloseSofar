@@ -1,7 +1,7 @@
 import React from "react"  
 import PropTypes from "prop-types"
 import Seo from "./seo"
-
+import "../styles/mobileLayout.scss"; 
 const Layout = ({ children }) => {  
   return (
     <>

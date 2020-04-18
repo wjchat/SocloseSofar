@@ -9,11 +9,11 @@ import '../styles/landing.scss'
 export default (props) => {
 
   const handleClick = () => {
-    window.scrollTo({top:1000, left:0, behavior:"smooth"});
+    window.scrollTo({top: window.innerHeight, left:0, behavior:"smooth"});
   }
 
   return (
-    <div>
+    <div className = 'landingBack'>;
       <div className="landingContainer">
         <div className="logoContainer">
           <a href="http://www.matteprojects.com" target="_blank">

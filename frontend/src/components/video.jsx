@@ -24,12 +24,11 @@ export default ({ children }) => {
   const videoSRC = data.allStrapiMatteVideos.edges[0].node.video.publicURL
   return (
     <div className="vidContainer">
-      <ReactPlayer 
-        width="100%" 
-        height="100%" 
-        url={videoSRC}
-        controls={true}
-      />
+        <video width="100%" height="100%" controls>
+          <source src={videoSRC} type="video/mp4" />
+          <source src={videoSRC} type="video/ogg" />
+        Your browser does not support the video tag.
+        </video>
     </div>
 )
 }

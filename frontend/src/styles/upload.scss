@@ -114,7 +114,8 @@ input[type="file"] {
   cursor: pointer;
   transition: all .25s;
   @include mobile {
-    padding: 2% 15%;
+    padding: 2% 0;
+      width: 80%;
   }
 }
 
@@ -128,6 +129,9 @@ input[type="file"] {
   position: relative;
   left: 80%;
   top: 45.5%;
+    @include mobile{
+        display: none;
+    }
 }
 
 .x-active {
@@ -158,7 +162,7 @@ input[type="file"] {
 }
 
 .formSubmit {
-  height: 15%;
+    height: 15%;
   width: 50%;
   background-color: black;
   color: $goldX;
@@ -171,7 +175,8 @@ input[type="file"] {
   cursor: pointer;
   transition: all .25s;
   @include mobile {
-    padding: 2% 15%;
+    padding: 2% 0;
+      width: 80%;
   }
 }
 
@@ -190,6 +195,8 @@ input[type="file"] {
   color: $greyX;
   font-family: garamond;
   font-size: $bodyText;
+    pointer-events: none;
+    padding-top: 5%;;
 
     @include mobile{
         font-size: 6vw;

@@ -9,8 +9,7 @@
     @include mobile{
         position: relative;
         grid-template-rows: .2fr 1fr .2fr;
-        height: 200vh;
-        margin-top: 70%;
+        z-index: 2;
     }
   div{
     position: relative;

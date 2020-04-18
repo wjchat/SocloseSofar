@@ -1,0 +1,9 @@
+@import "global";
+main{
+    @include mobile{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 480vw;
+    }
+}
