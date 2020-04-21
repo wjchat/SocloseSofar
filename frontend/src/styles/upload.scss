@@ -149,7 +149,7 @@ input[type="file"] {
 .x-inactive {
   position: absolute;
   left: 0%;
-  animation: xRollOut .35s .1s forwards ease-in;
+  animation: xRollOut .35s .06s forwards ease-in;
   color: $goldX;
   font-family: "HelveticaNeue-Light";
   font-weight: 100;
@@ -187,6 +187,7 @@ input[type="file"] {
   align-items: center;
   justify-content: center;
   height: 12%;
+  top: 5%;
   color: $greyX;
   font-family: garamond;
   font-size: $bodyText;
@@ -228,9 +229,9 @@ input[type="file"] {
 }
 
 @keyframes xRollOut {
-  0% { left: 0%; }
+  0% { left: 0%; color: $goldX }
   50% {left: 4%; transform: rotate(-360%)}
-  100% {left: -20%; transform: rotate(-900deg); }
+  100% {left: -20%; transform: rotate(-900deg); color: $greyX }
 }
 
 
